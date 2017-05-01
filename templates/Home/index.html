@@ -1,0 +1,872 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trancervatory</title>
+
+
+    <!-- Library CSS -->
+    <link href="{% static 'Home/css/harmony_library.css' %}" rel="stylesheet">
+    <link href="{% static 'Home/css/jquery.mb.YTPlayer.min.css' %}" media="all" rel="stylesheet" type="text/css">
+
+    <!-- Icons CSS -->
+    <link href="{% static 'Home/fonts/themify-icons.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'Home/css/harmony_style.css' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300,500,700,900' rel='stylesheet'
+          type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+
+    <meta property="og:url" content="http://www.trancervatory.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trancervatory 2016" />
+    <meta property="og:description" content="El mejor evento de música electrónica en Guayaquil. Pre-Venta del 5 al 18 de Septiembre." />
+    <meta property="og:image" content="http://trancervatory.com/static/Home/images/email/trancervatory-bg.jpg" />
+
+    <!-- Favicon Trancervatory -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/Home/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/Home/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/Home/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/Home/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/Home/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/Home/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/Home/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/Home/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/Home/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/Home/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/Home/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/Home/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/Home/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/Home/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/Home/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- End Favicon Trancervatory -->
+</head>
+<body class="har_middle_titles">
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1579672515662515";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Preloader -->
+<div class="har_preloader">
+        <span class="har_logo_eq">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </span>
+</div>
+<!-- Preloader End -->
+
+<!-- Page -->
+<div class="har_page" id="har_page">
+
+    <!-- To Top -->
+    <a href="#har_page" class="har_top ti ti-arrow-up har_go"></a>
+
+
+    <!-- Audio Player -->
+    <section class="har_player_container_red hidden-xs">
+        <div class="container">
+            <div class="har_player">
+
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-playlist">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls">
+                                <button class="jp-previous" tabindex="0"><i class="ti ti-control-skip-backward"></i>
+                                </button>
+                                <button class="jp-play" tabindex="0"><i class="ti ti-control-play"></i></button>
+                                <button class="jp-next" tabindex="0"><i class="ti ti-control-skip-forward"></i></button>
+                                <button class="jp-mute" tabindex="0"><i class="ti ti-volume"></i></button>
+                                <!-- <button class="jp-volume-max" role="button" tabindex="0"><i class="fa fa-volume-up"></i></button> -->
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
+                                </div>
+                                <button id="playlist-toggle"><i class="ti ti-align-justify"></i></button>
+                            </div>
+                            <!-- Display the track inside player -->
+                            <div id="nowPlaying">
+                                <span class="artist-name"></span>
+                                <span class="track-name"></span>
+                            </div><!-- #nowPlaying -->
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar"></div>
+                                </div>
+                            </div>
+                            <!-- Playlist -->
+                            <div class="jp-playlist">
+                                <ul>
+                                    <li>&nbsp;</li>
+                                </ul>
+                            </div>
+                            <!-- Playlist End -->
+                        </div>
+
+                        <!-- Error -->
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            To play the media you will need to either update your browser to a recent version or update
+                            your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                        <!-- Error End -->
+                    </div>
+                    <!-- Playlist End -->
+                </div>
+            </div>
+        </div>
+        <!-- Player End -->
+
+    </section>
+    <!-- Audio Player End -->
+
+    <!-- Header -->
+    <header>
+
+        <nav class="har_light_nav har_transp_nav">
+            <div class="container">
+
+                <!-- Logo -->
+                <a href="/" class="har_logo"><img src="{% static 'Home/images/trancervatory_logo_mini.png' %}"></a>
+                <!-- Logo End-->
+
+                <div class="har_top_menu_mobile_link">
+                    <i class="ti ti-menu"></i>
+                </div>
+                <!-- Top Menu -->
+                <div class="har_top_menu_cont">
+                    <ul class="har_top_menu">
+                        <li><a href="#shop">Comprar Tickets</a>
+                        </li>
+                        <li><a href="#event">El Evento</a>
+                        </li>
+                        <li><a href="#gallery">Galería</a>
+                        </li>
+                        <li><a href="faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Top Menu End -->
+
+
+            </div>
+            <!-- container end -->
+        </nav>
+
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Slider -->
+    <div class="har_slider_carousel">
+
+        <!-- item -->
+        <div class="har_slider har_image_bck har_wht_txt" data-image="{% static 'Home/images/slider/sl6.jpg' %}">
+            <div class="clouds hidden-xs"></div>
+            <!-- Over -->
+            <div class="har_over" data-color="#000" data-opacity="0.2"></div>
+
+            <div class="container" style="height: 70%">
+
+                <!-- Slider Texts -->
+                <div class="har_slide_txt_red har_slide_middle" data-0="opacity:1; margin-top:0px"
+                     data--400-bottom="opacity:0; margin-top:-100px">
+                    <h3 class="har_rotated">Pre-Venta</h3>
+                    <div class="har_slide_title_red">
+                        <div style="font-size: 0px;">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="-15 347 220 27.5" style="max-width: 300px; enable-background:new -15 347 220 27.5;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0 {
+                                    enable-background: new;
+                                }
+
+                                .st1 {
+                                    fill: #FFFFFF;
+                                }
+
+                                .st2 {
+                                    fill: #009EAB;
+                                    stroke: #FFFFFF;
+                                    stroke-width: 0.5;
+                                    stroke-miterlimit: 10;
+                                }
+                            </style>
+                            <g class="st0">
+                                <path class="st1" d="M21.1,360.6v-8.1h-2.8v-1.3h7v1.3h-2.8v8.1H21.1z"/>
+                                <path class="st1" d="M27.7,355.8h1.6c1.1,0,1.7-0.8,1.7-1.6c0-0.8-0.6-1.6-1.7-1.6h-2.1v8h-1.3v-9.4h3.4c2,0,3,1.5,3,3
+                                    c0,1.3-0.8,2.6-2.4,2.9l3,3.5h-1.8l-3.4-4.1V355.8z"/>
+                                <path class="st1" d="M38.6,357.8h-3.4c-0.4,0.9-0.8,2-1.1,2.8h-1.5l3.8-9.5h1l3.8,9.5h-1.4L38.6,357.8z M35.7,356.5H38l-1.1-3.3
+                                    L35.7,356.5z"/>
+                                <path class="st1" d="M41.6,360.6v-9.4h1l4.6,6.6v-6.6h1.3v9.4h-1.1l-4.5-6.5v6.5C42.9,360.6,41.6,360.6,41.6,360.6z"/>
+                                <path class="st1" d="M50.2,352.5c0.8-0.8,2-1.4,3.2-1.4c2.1,0,3.8,1.3,4.4,3.4h-1.3c-0.5-1.4-1.6-2.1-3-2.1c-0.9,0-1.7,0.4-2.3,1
+                                    s-1,1.4-1,2.4c0,0.9,0.4,1.8,1,2.4c0.6,0.6,1.4,1,2.3,1c1.4,0,2.6-0.8,3.1-2.2h1.3c-0.5,2.1-2.2,3.6-4.4,3.6
+                                    c-1.3,0-2.4-0.5-3.2-1.4c-0.8-0.9-1.3-2-1.3-3.3C48.8,354.6,49.4,353.4,50.2,352.5z"/>
+                                <path class="st1" d="M59.8,359.2h4.3v1.3h-5.7v-9.3h5.7v1.4h-4.3v2.6H64v1.4h-4.2V359.2z"/>
+                                <path class="st1" d="M66,360.6h-1.4v-9.4h5.6v1.4H66v2.6h3.7v1.4H66L66,360.6L66,360.6z"/>
+                                <path class="st1" d="M75.3,357.8h-3.4c-0.4,0.9-0.8,2-1.1,2.8h-1.5l3.8-9.5h1l3.8,9.5h-1.4L75.3,357.8z M72.5,356.5h2.3l-1.1-3.3
+                                    L72.5,356.5z"/>
+                                <path class="st1" d="M79.7,360.6h-1.4v-9.4h1.1l3.1,4.5l3.1-4.5h1.1v9.4h-1.3V354l-2.4,3.6h-0.8l-2.4-3.6v6.6H79.7z"/>
+                                <path class="st1" d="M92.7,352.5H91v6.7h1.7v1.3h-4.8v-1.3h1.7v-6.7h-1.7v-1.3h4.8V352.5z"/>
+                                <path class="st1" d="M94.8,359.2h4.4v1.3h-5.7v-9.3h1.4L94.8,359.2L94.8,359.2z"/>
+                                <path class="st1" d="M98.8,351.2l2.6,4.1l2.6-4.1h1.6l-3.5,5.5v3.8h-1.4v-3.8l-3.5-5.5C97.2,351.2,98.8,351.2,98.8,351.2z"/>
+                            </g>
+                            <g class="st0">
+                                <path class="st2" d="M106.7,360.4h5v0.2h-5.1l0,0v-9.4h5.2v0.2h-4.9v4.4h4.8v0.2h-4.8v4.4H106.7z"/>
+                                <path class="st2" d="M121,354.1c-0.2-0.5-0.5-0.9-0.9-1.3c-0.8-0.8-1.9-1.3-3.1-1.3c-1.2,0-2.3,0.5-3.1,1.3
+                                    c-0.8,0.8-1.3,1.9-1.3,3.1c0,1.2,0.5,2.3,1.3,3.1s1.9,1.3,3.1,1.3c1.2,0,2.3-0.5,3.1-1.3c0.4-0.4,0.7-0.8,0.9-1.3h0.2
+                                    c-0.2,0.5-0.6,1-1,1.5c-0.8,0.9-2,1.4-3.2,1.4c-1.3,0-2.4-0.5-3.2-1.4c-0.8-0.8-1.3-2-1.3-3.3c0-1.3,0.5-2.4,1.3-3.3s2-1.4,3.2-1.4
+                                    c1.3,0,2.4,0.5,3.2,1.4c0.4,0.4,0.7,0.9,1,1.5H121z"/>
+                                <path class="st2" d="M122.2,358v-6.8h0.2v6.8c0,1.6,1.6,2.4,3.1,2.4c1.4,0,3.1-0.8,3.1-2.4v-6.8h0.2v6.8c0,1.7-1.7,2.6-3.3,2.6
+                                    C123.9,360.7,122.2,359.8,122.2,358z"/>
+                                <path class="st2" d="M135.5,357.4h-4.7l-1.3,3.1h-0.2l3.8-9.5h0.2l3.8,9.5h-0.2L135.5,357.4z M130.9,357.2h4.6l-2.3-5.9
+                                    L130.9,357.2z"/>
+                                <path class="st2" d="M140.9,351.2c6.1,0,6.1,9.3,0,9.3h-3.2c0-3.1,0-6.2,0-9.3C137.7,351.2,140.9,351.2,140.9,351.2z M140.9,360.4
+                                    c5.9,0,5.9-8.9,0-8.9h-3c0,2.9,0,6,0,8.9H140.9z"/>
+                                <path class="st2" d="M147.6,352.5c0.9-0.9,2.1-1.4,3.4-1.4s2.5,0.5,3.4,1.4s1.4,2.1,1.4,3.4c0,1.3-0.5,2.5-1.4,3.4
+                                    c-0.9,0.9-2.1,1.4-3.4,1.4c-1.3,0-2.5-0.5-3.4-1.4c-0.9-0.9-1.4-2.1-1.4-3.4C146.2,354.6,146.7,353.4,147.6,352.5z M154.2,352.7
+                                    c-0.8-0.8-2-1.4-3.2-1.4c-1.3,0-2.4,0.5-3.2,1.4c-0.8,0.8-1.3,2-1.3,3.2c0,1.3,0.5,2.4,1.3,3.2c0.8,0.8,2,1.4,3.2,1.4
+                                    c1.3,0,2.4-0.5,3.2-1.4c0.8-0.8,1.3-2,1.3-3.2C155.5,354.6,155,353.5,154.2,352.7z"/>
+                                <path class="st2" d="M156.9,360.6h-0.2v-9.3v-0.1h0.1h3.1c3.7,0,3.7,5.5,0,5.5h-1.5l4.3,3.9h-0.3l-4.3-3.9v-0.2h1.8
+                                    c3.5,0,3.5-5.1,0-5.1h-3V360.6z"/>
+                            </g>
+                            <g class="st0">
+                                <path class="st1" d="M79.4,366c1.3,0,2,1,2,2.1c0,1-0.7,2.1-2,2.1H78v2.1h-0.9V366L79.4,366L79.4,366z M79.4,369.3
+                                    c0.8,0,1.1-0.6,1.1-1.2c0-0.6-0.4-1.2-1.1-1.2H78v2.4C78,369.3,79.4,369.3,79.4,369.3z"/>
+                                <path class="st1" d="M83.4,369h1.1c0.8,0,1.1-0.5,1.1-1.1c0-0.5-0.4-1.1-1.1-1.1h-1.4v5.3h-0.9V366h2.3c1.4,0,2,1,2,2
+                                    c0,0.9-0.5,1.7-1.6,1.9l2,2.3h-1.2l-2.3-2.7L83.4,369L83.4,369z"/>
+                                <path class="st1" d="M87.8,371.3h2.9v0.9h-3.8V366h3.8v0.9h-2.9v1.8h2.8v0.9h-2.8V371.3z"/>
+                                <path class="st1" d="M94.5,367.5c-0.1-0.6-0.7-0.8-1.3-0.8c-0.4,0-0.9,0.2-1.1,0.5c-0.1,0.2-0.2,0.4-0.2,0.6c0,0.6,0.7,0.7,1.4,0.8
+                                    c0.9,0.1,1.9,0.3,2.2,1.3c0,0.1,0,0.3,0,0.4c0,1.2-1.2,1.9-2.3,1.9c-1,0-2.1-0.6-2.2-1.7v-0.2h0.9v0.1l0,0c0.1,0.6,0.8,0.9,1.3,0.9
+                                    c0.7,0,1.4-0.4,1.4-1c0-0.1,0-0.1,0-0.2c-0.1-0.5-0.7-0.6-1.4-0.6c-1-0.1-2.1-0.3-2.2-1.6l0,0c0-0.4,0.1-0.8,0.3-1.2
+                                    c0.4-0.5,1.2-0.8,1.9-0.8c1,0,2,0.5,2.1,1.6H94.5z"/>
+                                <path class="st1" d="M96.9,371.3h2.9v0.9H96V366h3.8v0.9h-2.9v1.8h2.8v0.9h-2.8V371.3z"/>
+                                <path class="st1" d="M100.2,372.1V366h0.7l3,4.4V366h0.9v6.2h-0.7l-3-4.4v4.4C101.1,372.1,100.2,372.1,100.2,372.1z"/>
+                                <path class="st1" d="M106.3,372.3v-5.5h-1.9V366h4.7v0.8h-1.9v5.4h-0.9V372.3z"/>
+                                <path class="st1" d="M112.1,370.4h-2.2c-0.2,0.6-0.6,1.3-0.7,1.8h-1l2.5-6.3h0.7l2.5,6.3h-1L112.1,370.4z M110.2,369.5h1.5
+                                    l-0.8-2.2L110.2,369.5z"/>
+                            </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <svg version="1.1" id="Trancervatory" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="-97 370 416 66.5" style="max-width: 750px; enable-background:new -97 370 416 66.5;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0 {
+                                    enable-background: new;
+                                }
+
+                                .st1 {
+                                    fill: FFF;
+                                }
+
+                                .st3 {
+                                    fill: none
+                                }
+                            </style>
+                            <g class="st0">
+                                <path class="st1 st3" d="M-74.4,414v-31.7h-11.2v-5.4H-58v5.4h-11.1V414H-74.4z"/>
+                                <path class="st1 st3" d="M-48.3,395.1h6.2c4.5,0,6.7-3.2,6.7-6.4c0-3.2-2.2-6.4-6.7-6.4h-8.2v31.5h-5.3v-36.9h13.4c8,0,12,5.9,12,11.7
+                                    c0,5.2-3.2,10.2-9.5,11.3l11.7,13.9h-6.9l-13.4-16.2V395.1z"/>
+                                <path class="st1 st3" d="M-7.5,403h-13.3c-1.4,3.4-3.3,7.8-4.4,10.8h-5.7l14.8-37.3h3.9l14.8,37.3h-5.7L-7.5,403z M-18.8,397.9h9.2
+                                    l-4.5-13L-18.8,397.9z"/>
+                                <path class="st1 st3" d="M3.1,413.8v-36.9l4.1,0.1l18,26v-26h5.3v36.9h-4.2L8.5,388v25.8H3.1z"/>
+                                <path class="st1 st3" d="M38.7,382.3c3.2-3.3,7.7-5.5,12.7-5.5c8.4,0,15.1,5.3,17.2,13.6h-5.3c-1.9-5.5-6.5-8.3-11.9-8.3
+                                    c-3.5,0-6.7,1.5-9.1,3.9c-2.3,2.4-3.8,5.7-3.8,9.5c0,3.7,1.5,7,3.8,9.4s5.5,3.9,9.1,3.9c5.6,0,10.3-3.2,12.2-8.8h5.2
+                                    c-2.1,8.4-8.8,14.1-17.4,14.1c-5,0-9.5-2.1-12.7-5.5s-5.3-8-5.3-13.1C33.4,390.3,35.5,385.6,38.7,382.3z"/>
+                                <path class="st1 st3" d="M76.7,408.5h17.1v5.3H71.3V377h22.4v5.3H76.6v10.4h16.7v5.4H76.6v10.4H76.7z"/>
+                                <path class="st1 st3" d="M103.4,395.1h6.2c4.5,0,6.7-3.2,6.7-6.4c0-3.2-2.2-6.4-6.7-6.4h-8.2v31.5h-5.3v-36.9h13.4c8,0,12,5.9,12,11.7
+                                    c0,5.2-3.2,10.2-9.5,11.3l11.6,13.8h-6.9l-13.4-16.2L103.4,395.1L103.4,395.1z"/>
+                                <path class="st1 st3" d="M148.7,377h5.7l-14.8,36.9h-3.9L120.9,377h5.8l11,27.5L148.7,377z"/>
+                                <path class="st1 st3" d="M172,403h-13.2c-1.4,3.4-3.3,7.8-4.4,10.8h-5.7l14.8-37.3h3.9l14.8,37.3h-5.7L172,403z M160.8,397.9h9.2
+                                    l-4.5-13L160.8,397.9z"/>
+                                <path class="st1 st3" d="M187.6,414v-31.7h-11.2v-5.4H204v5.4h-11.1V414H187.6z"/>
+                                <path class="st1 st3" d="M208.8,382c3.4-3.4,8.1-5.6,13.3-5.6c5.2,0,9.9,2.2,13.3,5.6c3.3,3.4,5.5,8.1,5.5,13.3c0,5.2-2.2,9.9-5.5,13.3
+                                    c-3.4,3.5-8.1,5.6-13.3,5.6c-5.2,0-9.9-2.1-13.3-5.6c-3.3-3.4-5.5-8.1-5.5-13.3C203.3,390.2,205.5,385.5,208.8,382z M231.6,385.8
+                                    c-2.5-2.5-5.9-4-9.5-4s-7,1.5-9.4,4c-2.4,2.4-4,5.8-4,9.5c0,3.7,1.5,7.1,4,9.5c2.4,2.5,5.8,4,9.4,4s7.1-1.5,9.5-4
+                                    c2.4-2.4,3.9-5.7,3.9-9.5C235.5,391.6,234,388.3,231.6,385.8z"/>
+                                <path class="st1 st3" d="M251.4,395.1h6.2c4.5,0,6.7-3.2,6.7-6.4c0-3.2-2.2-6.4-6.7-6.4h-8.2v31.5h-5.3v-36.9h13.4c8,0,12,5.9,12,11.7
+                                    c0,5.2-3.2,10.2-9.5,11.3l11.6,13.8h-6.9l-13.4-16.2L251.4,395.1L251.4,395.1z"/>
+                                <path class="st1 st3" d="M273.6,377l10.1,16.2l10-16.2h6.3l-13.7,21.8v15H281v-15L267.3,377H273.6z"/>
+                            </g>
+                            <g class="st0">
+                                <path class="st1" d="M-45.8,421.6h1v5.8h0.7v1.3h-0.7v2.1h-1.3v-2.1h-4.6v-0.9L-45.8,421.6z M-46.1,427.5v-3.6l-2.9,3.6H-46.1z"/>
+                                <path class="st1" d="M-38.1,430.8v-8h-2.8v-1.2h6.9v1.2h-2.8v8H-38.1z"/>
+                                <path class="st1" d="M-29.1,425.5h3.9v-3.9h1.3v9.2h-1.3v-4h-3.9v4h-1.3v-9.2h1.3V425.5z"/>
+                                <path class="st1" d="M-10,430.8v-8h-2.8v-1.2h6.9v1.2h-2.8v8H-10z"/>
+                                <path class="st1" d="M-0.5,426.1h1.6c1.1,0,1.7-0.8,1.7-1.6s-0.6-1.6-1.7-1.6h-2v7.9h-1.3v-9.2h3.4c2,0,3,1.5,3,2.9
+                                    c0,1.3-0.8,2.5-2.4,2.8l2.9,3.5H3l-3.4-4L-0.5,426.1L-0.5,426.1z"/>
+                                <path class="st1" d="M13.2,428.1H9.9c-0.4,0.8-0.8,1.9-1.1,2.7H7.4l3.7-9.3h1l3.7,9.3h-1.4L13.2,428.1z M10.3,426.8h2.3l-1.1-3.2
+                                    L10.3,426.8z"/>
+                                <path class="st1" d="M19.1,430.8v-9.2h1l4.5,6.5v-6.5h1.3v9.2h-1.1l-4.4-6.4v6.4H19.1z"/>
+                                <path class="st1" d="M30.5,422.9c0.8-0.8,1.9-1.4,3.2-1.4c2.1,0,3.8,1.3,4.3,3.4h-1.3c-0.5-1.4-1.6-2.1-3-2.1c-0.9,0-1.7,0.4-2.3,1
+                                    c-0.6,0.6-0.9,1.4-0.9,2.4c0,0.9,0.4,1.7,0.9,2.3c0.6,0.6,1.4,1,2.3,1c1.4,0,2.6-0.8,3.1-2.2h1.3c-0.5,2.1-2.2,3.5-4.4,3.5
+                                    c-1.2,0-2.4-0.5-3.2-1.4c-0.8-0.8-1.3-2-1.3-3.3C29.2,424.9,29.8,423.8,30.5,422.9z"/>
+                                <path class="st1" d="M43,429.5h4.3v1.3h-5.6v-9.2h5.6v1.3H43v2.6h4.2v1.3H43V429.5z"/>
+                                <path class="st1" d="M59.8,429.5h4.3v1.3h-5.6v-9.2h5.6v1.3h-4.3v2.6H64v1.3h-4.2V429.5z"/>
+                                <path class="st1" d="M68.8,422.9c0.8-0.8,1.9-1.4,3.2-1.4c2.1,0,3.8,1.3,4.3,3.4H75c-0.5-1.4-1.6-2.1-3-2.1c-0.9,0-1.7,0.4-2.3,1
+                                    c-0.6,0.6-0.9,1.4-0.9,2.4c0,0.9,0.4,1.7,0.9,2.3c0.6,0.6,1.4,1,2.3,1c1.4,0,2.6-0.8,3.1-2.2h1.3c-0.5,2.1-2.2,3.5-4.4,3.5
+                                    c-1.2,0-2.4-0.5-3.2-1.4c-0.8-0.8-1.3-2-1.3-3.3C67.5,424.9,68,423.8,68.8,422.9z"/>
+                                <path class="st1" d="M80,428v-6.4h1.3v6.4c0,1,1.1,1.5,2.1,1.5s2.1-0.5,2.1-1.5v-6.4h1.3v6.4c0,1.9-1.8,2.8-3.4,2.8
+                                    C81.8,430.9,80,429.9,80,428z"/>
+                                <path class="st1" d="M96.2,428.1h-3.3c-0.4,0.8-0.8,1.9-1.1,2.7h-1.4l3.7-9.3h1l3.7,9.3h-1.4L96.2,428.1z M93.4,426.8h2.3l-1.1-3.2
+                                    L93.4,426.8z"/>
+                                <path class="st1" d="M105.6,421.6c3,0,4.5,2.3,4.5,4.6c0,2.3-1.5,4.6-4.5,4.6h-3.3v-9.2H105.6z M105.6,429.5c2.1,0,3.2-1.6,3.2-3.3
+                                    c0-1.6-1.1-3.3-3.2-3.3h-2v6.5h2V429.5z"/>
+                                <path class="st1" d="M115.3,422.9c0.8-0.9,2-1.4,3.3-1.4s2.5,0.5,3.3,1.4s1.4,2,1.4,3.3c0,1.3-0.5,2.5-1.4,3.3
+                                    c-0.9,0.9-2,1.4-3.3,1.4s-2.5-0.5-3.3-1.4c-0.8-0.9-1.4-2-1.4-3.3C113.9,424.9,114.5,423.7,115.3,422.9z M121,423.8
+                                    c-0.6-0.6-1.5-1-2.4-1s-1.7,0.4-2.4,1c-0.6,0.6-1,1.4-1,2.4s0.4,1.8,1,2.4s1.4,1,2.4,1c0.9,0,1.8-0.4,2.4-1c0.6-0.6,1-1.4,1-2.4
+                                    S121.6,424.4,121,423.8z"/>
+                                <path class="st1" d="M128.9,426.1h1.6c1.1,0,1.7-0.8,1.7-1.6s-0.6-1.6-1.7-1.6h-2v7.9h-1.3v-9.2h3.4c2,0,3,1.5,3,2.9
+                                    c0,1.3-0.8,2.5-2.4,2.8l2.9,3.5h-1.7l-3.4-4v-0.7H128.9z"/>
+                                <path class="st1" d="M142,422.9h-1.7v6.6h1.7v1.3h-4.7v-1.3h1.7v-6.6h-1.7v-1.3h4.7V422.9z"/>
+                                <path class="st1" d="M151,428.1h-3.3c-0.4,0.8-0.8,1.9-1.1,2.7h-1.4l3.7-9.3h1l3.7,9.3h-1.4L151,428.1z M148.2,426.8h2.3l-1.1-3.2
+                                    L148.2,426.8z"/>
+                                <path class="st1" d="M157,430.8v-9.2h1l4.5,6.5v-6.5h1.3v9.2h-1.1l-4.4-6.4v6.4H157z"/>
+                                <path class="st1" d="M176.7,430.8h-1.3v-9.2h1.1l3,4.5l3-4.5h1.1v9.2h-1.3v-6.5l-2.4,3.6h-0.7l-2.4-3.6v6.5H176.7z"/>
+                                <path class="st1" d="M188.9,429.5h4.3v1.3h-5.6v-9.2h5.6v1.3h-4.3v2.6h4.2v1.3h-4.2V429.5z"/>
+                                <path class="st1" d="M198.1,429.5h4.3v1.3h-5.6v-9.2h5.6v1.3h-4.3v2.6h4.2v1.3h-4.2V429.5z"/>
+                                <path class="st1" d="M208,430.8v-8h-2.8v-1.2h6.9v1.2h-2.8v8H208z"/>
+                                <path class="st1" d="M220.3,422.9h-1.7v6.6h1.7v1.3h-4.7v-1.3h1.7v-6.6h-1.7v-1.3h4.7V422.9z"/>
+                                <path class="st1" d="M223.9,430.8v-9.2h1l4.5,6.5v-6.5h1.3v9.2h-1.1l-4.4-6.4v6.4H223.9z"/>
+                                <path class="st1" d="M241.8,424.9c-0.4-1.5-1.8-2-3-2c-1.8,0-3.2,1.4-3.2,3.3c0,1.9,1.4,3.4,3.2,3.4c1.1,0,2.3-0.5,2.9-1.9h-3.4
+                                    v-1.3h5c-0.1,0.8-0.1,1.3-0.3,1.6l0,0c-0.6,1.8-2.5,2.9-4.2,2.9c-2.6,0-4.5-1.9-4.5-4.7c0-2.7,2-4.7,4.5-4.7c1.8,0,3.9,0.9,4.4,3.4
+                                    C243.2,424.9,241.8,424.9,241.8,424.9z"/>
+                            </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="margin: 0px 0 10px" class="har_slide_subtitle_red">Guayaquil, Ecuador.</div>
+
+                    <!-- Slider Texts End -->
+                    <div><a href="#shop" class="btn red har_btn_slider" style="margin-top: 10px;font-weight: 700;">COMPRAR
+                        TICKETS</a></div>
+                </div>
+            </div>
+            <!-- container end -->
+
+        </div>
+
+    </div>
+
+    <!-- Slider End -->
+
+
+    <!-- section -->
+    <section class="har_section har_image_bck har_wht_txt har_fixed"
+             data-image="{% static 'Home/images/countdownbg.jpg' %}" data-stellar-background-ratio="0.2"
+             id="next_event">
+
+        <!-- Over -->
+        <div class="har_over" data-color="#333" data-opacity="0.8"></div>
+
+        <div class="container text-center" style="padding: 0;">
+
+            {#                    <h2>El Trancervatory empieza en</h2>#}
+
+            <!-- CountDown -->
+            <span class="har_countdown" data-year="2016" data-month="11" data-day="04"></span>
+        <div align="center">
+<iframe width="853" height="480" src="https://www.youtube.com/embed/jAGvY0TLXsQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>        </div>
+        </div>
+        <!-- container end -->
+    </section>
+
+
+    <!-- Content -->
+    <section id="har_content" class="har_content">
+
+
+        <!-- section -->
+        <section class="har_section har_image_bck" id="artist">
+            <div class="container text-center">
+
+                <h2>Lineup</h2>
+                <h3>Los encargados de hacernos volar con la mejor música Trance.
+                </h3>
+                <div class="row wow fadeInUp" data-wow-delay=".3s"
+                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="team har_team_box har_icon_box">
+                                <img class="img-responsive center-block"
+                                     src="{% static 'Home/images/gallery/djallegro.jpg' %}" alt="1">
+                                <h4><b>Allegro</b><br>Chile</h4>
+                                <div class="team-social-icons">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="team har_team_box har_icon_box">
+                                <img class="img-responsive center-block"
+                                     src="{% static 'Home/images/gallery/willatkinson.jpg' %}" alt="2">
+                                <h4><b>Will Atkinson</b><br>Reino Unido</h4>
+                                <div class="team-social-icons">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="team har_team_box har_icon_box">
+                                <img class="img-responsive center-block"
+                                     src="{% static 'Home/images/gallery/leo.jpg' %}" alt="3">
+                                <h4><b>Leo Vazquez</b><br> Argentina </h4>
+                                <div class="team-social-icons">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-md-4 col-lg-offset-2">
+                            <div class="team har_team_box har_icon_box">
+                                <img class="img-responsive center-block"
+                                     src="{% static 'Home/images/gallery/eminor.jpg' %}" alt="3">
+                                <h4><b>Eminor</b><br> Ecuador </h4>
+                                <div class="team-social-icons">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="team har_team_box har_icon_box">
+                                <img class="img-responsive center-block"
+                                     src="{% static 'Home/images/gallery/ithur.jpg' %}" alt="3">
+                                <h4><b>Ithur</b><br> Ecuador </h4>
+                                <div class="team-social-icons">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- container end -->
+
+        </section>
+        <!-- section end -->
+
+        <!-- section -->
+        <section class="har_section har_image_bck har_wht_txt har_fixed"
+                 data-image="{% static 'Home/images/contactusbg.jpg' %}" data-stellar-background-ratio="0.2"
+                 id="shop">
+
+            <!-- Over -->
+            <div id="form-section" class="har_over" data-color="#000" data-opacity="0.6"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="text-center" style="margin-right: auto; margin-left: auto;">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="ticket-card">
+                                        <div class="cover">
+                                            <img src="{% static 'Home/images/hold1-d.gif' %}" alt=""/>
+                                            <div class="info">
+                                                <div class="going">
+                                                    <i class="fa fa-group"></i> Del 5 al 23 de Septiembre
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="artist">
+                                                <h6 class="info">Pre-Venta / Early Birds</h6>
+                                                <h4 class="name">ETAPA 1</h4>
+                                            </div>
+                                            <div class="price">
+                                                <div class="from">Valor</div>
+                                                <div class="value">
+                                                    <b>$</b>30
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="ticket-card active">
+                                        <div class="cover">
+                                            <img src="{% static 'Home/images/hold2.jpg' %}" alt=""/>
+                                            <div class="info">
+                                                <div class="going">
+                                                    <i class="fa fa-group"></i>Del 24 de Septiembre al 3 de Noviembre
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="artist">
+                                                <h6 class="info">Venta General</h6>
+                                                <h4 class="name">ETAPA 2</h4>
+                                            </div>
+                                            <div class="price">
+                                                <div class="from">Valor</div>
+                                                <div class="value">
+                                                    <b>$</b>35
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="ticket-card">
+                                        <div class="cover">
+                                            <img src="{% static 'Home/images/hold3-d.jpg' %}" alt=""/>
+                                            <div class="info">
+                                                <div class="going">
+                                                    <i class="fa fa-group"></i>4 de Noviembre
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="artist">
+                                                <h6 class="info">Día del Evento</h6>
+                                                <h4 class="name">ETAPA 3</h4>
+                                            </div>
+                                            <div class="price">
+                                                <div class="from">Valor</div>
+                                                <div class="value">
+                                                    <b>$</b>40
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col end -->
+
+                    <div class="col-md-12 col-sm-12">
+                        <div style="max-width: 750px; margin-right: auto; margin-left: auto;">
+                            <div id="form-div">
+                            <h2 class="text-center">Comprar Tickets</h2>
+                            <h3 class="text-center">Llena el formulario a continuación y recibirás toda la información
+                                para poder obtener tu
+                                ticket.</h3>
+                            <form id="buyForm" class="har_form">
+                                <div class="row">
+                                    <h3 style="text-transform: uppercase; margin: 0px">Datos del Comprador</h3>
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Nombres</h3>
+                                        <input id="nombres" type="text" class="form-control" placeholder="Nombres" name="nombres"
+                                               >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Apellidos</h3>
+                                        <input id="apellidos" type="text" class="form-control" placeholder="Apellidos" name="apellidos"
+                                               >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Email</h3>
+                                        <input id="email" type="text" class="form-control" placeholder="Email" name="email"
+                                               required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Cédula</h3>
+                                        <input id="cedula" type="text" class="form-control" placeholder="Cédula" name="cedula"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Celular</h3>
+                                        <input id="celular" type="text" class="form-control" placeholder="Celular" name="celular"
+                                               required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Ciudad</h3>
+                                        <input id="ciudad" type="text" class="form-control" placeholder="Ciudad" name="ciudad"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">Provincia</h3>
+                                        <select name="province" id="Province" class="placeholder form-control"
+                                                data-value="shortcode" data-default-value="G" required></select>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 style="margin-bottom: 0px">País</h3>
+                                        <select name="country" id="Country" class="crs-country placeholder form-control"
+                                                data-region-id="Province" data-default-value="Ecuador"
+                                                required></select>
+                                    </div>
+                                </div>
+                                <h3 style="text-transform: uppercase; margin: 40px 0 0 0">Tickets</h3>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h3 style="margin-bottom: 0px">Cantidad</h3>
+                                        <select id="ticket-quantity" class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3 style="margin-bottom: 0px">Promotor</h3>
+                                        <input id="promo" type="text" class="form-control" placeholder="(opcional)" name="promo">
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <h3 style="margin-bottom: 0px">Total</h3>
+                                        <div id="ticket-total"> $35</div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" class="btn har-pay" style="margin-top: 10px"
+                                               value="Enviar">
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- col end -->
+
+                </div>
+                <!-- row end -->
+            </div>
+            <!-- container end -->
+        </section>
+        <!-- section end -->
+
+        <!-- section -->
+        <section class="har_section har_image_bck" id="event">
+            <div class="container-fluid text-center" style="background: black;color: #ececec;">
+
+                <h2>El Evento</h2>
+                <h3 style="text-align: justify; padding-left: 20px; padding-right: 20px;">
+                    El meeting se realiza desde el 2013, pero no fue hasta el 2015 en el que se realizó el primer
+                    Trancervatory en la ciudad de Guayaquil y en la
+                    comuna Montañita.  En el 2015 tuvimos el apoyo del label Abora
+                    Recordings, y como Headliner tuvimos a uno
+                    de los grandes exponentes del Uplifting Trance, <strong>Ori Uplift</strong>.</h3>
+                <h3 style="text-align: justify; padding-left: 20px; padding-right: 20px;">
+                    Este 2016, Trancervatory regresa en Noviembre, y vuelve con más talentos internacionales y una
+                    producción que nos hace seguir creciendo año
+                    a año!
+                </h3>
+                <!-- grid -->
+                <div id="gallery" class="har_portfolio grid">
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item event">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/1.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item event">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/2.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item mediam musician">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/3.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item event mediam">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/4.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item event musician mediam">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/5.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="col-sm-4 har_portfolio_item grid-item event musician">
+                        <div class="har_portfolio_item_cont">
+                            <img src="{% static 'Home/images/gallery/6.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- grid end -->
+
+            </div>
+            <!-- container end -->
+
+        </section>
+        <!-- section end -->
+
+    </section>
+    <!-- main section end -->
+
+
+    <!-- Footer -->
+    <footer class="har_image_bck text-center har_wht_txt" data-color="#000">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Copyrights -->
+                    <h2>Auspicia</h2>
+                    <div class="row" style="margin-bottom: 40px">
+                        <div class="col-lg-4">
+                            <img style="height: 130px" src="{% static 'Home/images/sponsors/musicfirst.png' %}">
+                        </div>
+                        <div class="col-lg-4">
+                            <img style="height: 130px" src="{% static 'Home/images/sponsors/tfec.png' %}">
+                        </div>
+                        <div class="col-lg-4">
+                            <img style="height: 150px" src="{% static 'Home/images/sponsors/stadiumartists.png' %}">
+                        </div>
+                        <div class="col-lg-12">
+                            <img style="height: 130px" src="{% static 'Home/images/sponsors/trancelatam.png' %}">
+                    </div>
+                    <div class="fb-like" data-width="300px" data-href="https://www.facebook.com/trancefamilyec/"
+                         data-colorscheme="dark" data-layout="standard" data-action="like" data-size="small"
+                         data-show-faces="true" data-share="true"></div>
+                    <!-- Social Buttons -->
+                    <div class="har_footer_social" style="margin-top: 20px;">
+                        <div data-animation="animation_blocks" data-bottom="@class:noactive"
+                             data--100-bottom="@class:active">
+                            <a target="_blank" href="https://www.facebook.com/trancefamilyec/"><i
+                                    class="ti ti-facebook har_icon_box"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/trancefamilyec/"><i
+                                    class="ti ti-instagram har_icon_box"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/user/TranceFamilyEc"><i
+                                    class="ti ti-youtube har_icon_box"></i></a>
+                            <a target="_blank" href="https://twitter.com/trancefamilyec"><i
+                                    class="ti ti-twitter har_icon_box"></i></a>
+                        </div>
+                    </div>
+
+                    <p>© 2016 TranceFamilyEc / @TranceFamilyEC</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+</div>
+<!-- Page End -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "http://www.trancervatory.com",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+593990445012",
+    "contactType": "customer service"
+  }]
+}
+</script>
+
+<!-- JQuery -->
+<script src="{% static 'Home/js/jquery-1.12.3.min.js' %}"></script>
+<!-- Library JS -->
+<script src="{% static 'Home/js/jquery.firefly-0.2.min.js' %}"></script>
+
+<script src="{% static 'Home/js/harmony_library.js' %}"></script>
+<script src="{% static 'Home/js/jquery.mb.YTPlayer.min.js' %}"></script>
+<script src="{% static 'Home/js/library/jquery.crs.min.js' %}"></script>
+<script src="{% static 'Home/js/library/jquery.validate.min.js' %}"></script>
+
+<!-- Theme JS -->
+<script src={% static 'Home/js/harmony_script.js' %}></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83688732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+    function buy() {
+    $(".har-pay").val("Procesando...");
+    var first_name = $('#nombres').val();
+    var last_name = $('#apellidos').val();
+    var id_number = $('#cedula').val();
+    var email = $('#email').val();
+    var phone = $('#celular').val();
+    var city = $('#ciudad').val();
+    var state = $("#Province option:selected").text();
+    var country = $("#Country option:selected").text();
+    var quantity = $('#ticket-quantity').val();
+    var promo = $('#promo').val();
+    var data = { first_name: first_name, last_name: last_name, id_number: id_number, email: email, phone: phone, city: city, state: state, country: country, quantity: quantity, promo: promo,  csrfmiddlewaretoken: '{{ csrf_token }}' }
+    $.ajax({
+            type: "POST",
+                url: '/buy/',
+                data: data,
+                dataType: "json",
+                complete: function (xhr, status, error) {
+                    if (xhr.status == 200) {
+                    console.log("ok");
+                        $('#form-div').html("<h2 class='text-center'>¡Gracias por tu pedido!</h2>" +
+                                "<h1 class='text-center'>Te hemos enviado la información de compra a tu email.</h1>");
+                            $('html, body').animate({
+                                    scrollTop: $("#form-div").offset().top
+                                }, 1000);
+                    }
+                    else{
+                    console.log("error");
+                        $('#form-div').html("<h2 class='text-center'>Ha ocurrido un error.</h2>" +
+                                "<h1 class='text-center'>Por favor envíanos un correo a ventas@trancervatory.com para solicitar tus tickets.</h1>");
+                                                $('html, body').animate({
+                                    scrollTop: $("#form-div").offset().top
+                                }, 1000);
+                    }
+                }
+    });
+}
+
+</script>
+
+</body>
+</html>

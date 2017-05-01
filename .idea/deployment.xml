@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="Trancervatory">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/trancervatory" local="$PROJECT_DIR$" web="/trancervatory" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Trancervatory FTP">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/trancervatory" local="$PROJECT_DIR$" web="/trancervatory" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
